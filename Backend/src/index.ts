@@ -12,7 +12,7 @@ dotenv.config();
 
 //Puertos
 const port = process.env.PORT || 3000;
-const dburl = process.env.DB_URL
+const dburl = process.env.DB_URL || 'Sin url'
 
 //Instacia
 const app = express();
