@@ -4,7 +4,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import mongoose from 'mongoose';
-
+import routes from './routes/index'
 
 
 //Environment
@@ -16,6 +16,10 @@ const dburl = process.env.DB_URL || 'Sin url'
 
 //Instacia
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(routes)
 
 mongoose.connect(dburl).then( () => {
     console.log('Connected to db')
