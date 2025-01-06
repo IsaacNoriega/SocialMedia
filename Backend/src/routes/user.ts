@@ -7,7 +7,6 @@ router.post('/login' , userControllers.signIn);
 
 router.post('/signup' , userControllers.signUp);
 
-router.get('/friends' , userControllers.getAllFriends);
 
 
 
