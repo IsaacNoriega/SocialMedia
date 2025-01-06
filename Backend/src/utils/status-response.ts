@@ -3,5 +3,5 @@ export default {
     BAD_REQUEST : 400 ,
     UNAUTHTENTICATED : 401 ,
     FORBIDDEN : 403 ,
-    NOT_FOUD : 404
+    NOT_FOUND : 404
 }
