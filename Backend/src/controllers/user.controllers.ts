@@ -51,7 +51,7 @@ class UserControllers{
                 const token = jwt.sign(tokenData , process.env.TOKEN_KEY) // Se crea el token
                 res.status(statusResponse.SUCCESS).send('Log In Success');
             }else {
-                res.status(statusResponse.NOT_FOUD).send('User not found');
+                res.status(statusResponse.NOT_FOUND).send('User not found');
             }
         }).catch( e => {
             res.status(statusResponse.BAD_REQUEST).send('Something went wrong')
@@ -59,6 +59,19 @@ class UserControllers{
     }
 
     // Get para los amigos 
+    getAllFriends( req : Request , res : Response ) : void {
+        const email = req.body.email
+
+        User.findOne({ email : email }).then(response => {
+            res.status(statusResponse.SUCCESS).send(response.friends)
+        }).catch( e  => {
+            res.status(statusResponse.BAD_REQUEST).send('Something went wrong')
+        })
+    }
+
+    
+
+
 }
 
 export default new UserControllers();
