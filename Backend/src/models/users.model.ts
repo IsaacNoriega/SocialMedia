@@ -11,7 +11,7 @@ const userSchema = new Schema({
     gender : { type : String , required : true },
     status : { type : String , default : 'new' }, 
     friends : [{ type : String }],
-    posts : [ { type : mongoose.Schema.Types.ObjectId , ref : 'Post'} ]
+    posts : [ { type : mongoose.Schema.Types.ObjectId , ref : 'Posts'} ]
 })
 
 const User  = model('User' , userSchema);
